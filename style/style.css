@@ -1,16 +1,31 @@
+:root{
+    --color-backgorund:#EEEEEE;
+    --color-primario:#76ABAE;
+    --color-secundario:#31363F;
+    --color-enfasis:#222831;
+}
+
 *{
-    background-color: #c6d4d5;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
+    height: auto;
 
+}
+
+body{
+    height: 100vh;
+    background:linear-gradient( #EEEEEE 85%, #76ABAE );
+    background-repeat: no-repeat;
+    margin: 0%;
+    background-attachment: fixed;
 }
 
 .logo{
     padding-top: 10px;
     margin-left: 10px;
-    width: 2%;
+    width: 1.2em;
 }
 
 main{
@@ -21,29 +36,31 @@ main{
 
 .text-area{
     border: none;
-    color: rgb(0, 0, 0);
+    color: var(--color-enfasis);
     margin-top: 90px;
     text-transform: lowercase;
+    background-color: var(--color-backgorund);
 }
-::placeholder{ color: rgb(11, 45, 167);}
+::placeholder{ color: var(--color-enfasis);}
     .text-area:focus{
         outline: none;
     }
 
     .mensaje{
-        background: white;
+        background: var(--color-primario);
         background-image: url("../img/Muneco.png");
         background-repeat: no-repeat;
         border: none;
         border-radius: 24px;
-        color: rgb(72, 108, 199);
+        color: var(--color-secundario);
         margin-left: 98px;
-        margin-top: 20px;
+        margin-top: 90px;
         padding-left: 20px;
-        position: relative;
+        position: absolute;
     }
     .mensaje:focus{
         outline: none;
+        color: white;
     }
 
     .botones{
@@ -52,8 +69,9 @@ main{
     }
     
     .btn__encriptar{
-        background-color: blue;
-        border: 1px solid blue;
+        background-color: var(--color-secundario);
+        border: 1px solid;
+        border-color: var(--color-secundario);
         border-radius: 24px;
         color: white;
         cursor: pointer;
@@ -62,10 +80,11 @@ main{
     }
     
     .btn__desencriptar{
-        background-color: rgb(255, 255, 255);
-        border: 1px solid blue;
+        background-color: var(--color-primario);
+        border: 1px solid;
+        border-color: var(--color-primario);
         border-radius: 24px;
-        color: blue;
+        color: white;
         cursor: pointer;
         height: 67px;
         margin-left: 30px;
@@ -73,15 +92,16 @@ main{
     }
     
     .boton_copiar{
-        border: 1px solid blue;
+        border: 1px solid;
         border-radius: 24px;
-        color: blue;
+        border-color: var(--color-primario);
+        color: var(--color-secundario);
         cursor: pointer;
         height: 67px;
-        margin-left: 108px;
-        margin-top: auto;
-        position: absolute;
-        width: 336px;
+        margin-left: 128px;
+        margin-top: 480px;
+        position:relative;
+        width: 300px;
     }
 
 .informacion{
