@@ -13,7 +13,43 @@ function encriptar(stringEncriptada){
     return stringEncriptada;
 }
 
+function desencriptar(stringDesencriptada){
+    let matrizCodigo = [["e", "enter"],["i", "imes"],["a", "ai"],["o","ober"],["u", "ufat"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase();
+
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]);
+        }
+    }
+    return stringDesencriptada;
+}
+
+function copiarTexto() {
+    // Selecciona el textarea con la clase "mensaje"
+    const mensaje = document.querySelector('.mensaje');
+
+    // Selecciona el texto dentro del textarea
+    mensaje.select();
+    mensaje.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+    // Copia el texto seleccionado al portapapeles
+    document.execCommand('copy');
+}
+
+
 function btnEncriptar(){
     const textoEncriptado = encriptar(textArea.value);
     mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
 }
+
+function btnDesecriptar(){
+    const textoEncriptado = desencriptar(textArea.value);
+    mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
+}
+
+
